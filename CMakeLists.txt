@@ -354,6 +354,7 @@ if(CPPTRACE_GET_SYMBOLS_WITH_LIBDWARF)
   else()
     include(FetchContent)
     # First, dependencies: Zstd and zlib (currently relying on system zlib)
+    set(CPPTRACE_USE_EXTERNAL_ZSTD ON) # for HLVM project, we use zstd static linked and managed by vcpkg already
     if(CPPTRACE_USE_EXTERNAL_ZSTD)
       find_package(zstd)
     else()
